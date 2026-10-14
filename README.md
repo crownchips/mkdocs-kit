@@ -4,11 +4,8 @@ crownchips 기획서 사이트들의 공용 모양이다. [docs.zlink.systems](h
 
 | 사이트 | 저장소 |
 | --- | --- |
-| [docs.crownchips.com](https://docs.crownchips.com) (목록) | crownchips/docs-hub |
-| cc-games.docs.crownchips.com | crownchips/cc-games |
-| jpoker.docs.crownchips.com | crownchips/jpoker |
-| casino.docs.crownchips.com | crownchips/crownchips |
-| business.docs.crownchips.com | crownchips/business-plan |
+| [docs.crownchips.com](https://docs.crownchips.com) — 모든 프로젝트의 기획서·원칙(위쪽 탭) | crownchips/docs |
+| jpoker.docs.crownchips.com, casino.docs.crownchips.com | crownchips/jpoker, crownchips/crownchips(crownchips/docs로 옮기는 중) |
 
 ## 쓰는 법
 
@@ -74,4 +71,4 @@ python tools/sync_from_zlink.py D:/project/zlink --write  # korean.css·mermaid 
 
 ## 새 프로젝트
 
-crownchips/docs-hub의 `scripts/new-project.sh`가 mkdocs.yml·requirements·배포 workflow·Cloudflare Pages·주소·잠금·목록 카드를 한 번에 만든다.
+새 프로젝트는 별도 사이트를 만들지 않고 crownchips/docs에 폴더를 더한다. 그 저장소의 `docs/handbook/templates/`를 복사해 시작한다.
