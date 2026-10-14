@@ -27,7 +27,9 @@ from . import mermaid_size
 HERE = Path(__file__).parent
 
 # 키트가 사이트에 올리는 CSS. 저장소의 extra_css보다 앞에 둬서 저장소가 덮을 수 있다.
-KIT_CSS = ("korean.css", "base.css")
+KIT_CSS = ("korean.css", "base.css", "lightbox.css")
+# 본문 그림 클릭 확대.
+KIT_JS = ("lightbox.js",)
 KIT_CSS_DIR = "assets/crownchips-kit"
 
 PALETTE = [
@@ -97,10 +99,13 @@ class KitPlugin(BasePlugin[KitConfig]):
 
         kit_css = [f"{KIT_CSS_DIR}/{n}" for n in KIT_CSS]
         config.extra_css[:0] = [p for p in kit_css if p not in config.extra_css]
+        for p in (f"{KIT_CSS_DIR}/{n}" for n in KIT_JS):
+            if p not in config.extra_javascript:
+                config.extra_javascript.append(p)
         return config
 
     def on_files(self, files, config):
-        for name in KIT_CSS:
+        for name in KIT_CSS + KIT_JS:
             files.append(File.generated(config, f"{KIT_CSS_DIR}/{name}", abs_src_path=str(HERE / "assets" / name)))
         return files
 

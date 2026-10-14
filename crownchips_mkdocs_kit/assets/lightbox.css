@@ -1,0 +1,12 @@
+/* lightbox.js: 그림 크게 보기 */
+.cc-lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .8rem;
+  padding: 2rem; background: rgba(0, 0, 0, .92); cursor: zoom-out;
+}
+.cc-lightbox img {
+  max-width: 100%; max-height: calc(100vh - 6rem); object-fit: contain;
+  border-radius: 6px; box-shadow: 0 8px 40px rgba(0, 0, 0, .5);
+}
+.cc-lightbox-caption { color: #eee; font-size: .8rem; text-align: center; max-width: 60rem; }
+html.cc-lightbox-open { overflow: hidden; }

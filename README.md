@@ -12,7 +12,7 @@ crownchips 기획서 사이트들의 공용 모양이다. [docs.zlink.systems](h
 `docs/requirements.txt`:
 
 ```text
-crownchips-mkdocs-kit @ git+https://github.com/crownchips/mkdocs-kit@v1.0.0
+crownchips-mkdocs-kit @ git+https://github.com/crownchips/mkdocs-kit@v1.1.0
 ```
 
 `mkdocs.yml`:
@@ -43,6 +43,10 @@ nav:
 pip install -r docs/requirements.txt
 python -m mkdocs serve
 ```
+
+## 그림 크게 보기
+
+본문 그림(가로 120px 이상, 링크가 걸리지 않은 것)을 누르면 화면 크기로 크게 보인다. 그림을 다시 누르거나 Esc를 누르면 닫힌다. `figure`의 `figcaption`이 있으면 아래에 함께 보인다. 설정은 없다(`lightbox.js`, `lightbox.css`).
 
 ## 키트가 정하는 것
 
