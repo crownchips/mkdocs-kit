@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crownchips-mkdocs-kit"
+version = "1.0.0"
+description = "MkDocs Material look shared by the crownchips planning sites (same typography as docs.zlink.systems)"
+requires-python = ">=3.10"
+dependencies = [
+  "mkdocs>=1.6,<2",
+  "mkdocs-material>=9.7,<9.8",
+  "pymdown-extensions>=10",
+]
+
+[project.entry-points."mkdocs.plugins"]
+crownchips-kit = "crownchips_mkdocs_kit.plugin:KitPlugin"
+
+[tool.setuptools]
+packages = ["crownchips_mkdocs_kit"]
+
+[tool.setuptools.package-data]
+crownchips_mkdocs_kit = ["assets/*.css", "overrides/partials/*.html"]

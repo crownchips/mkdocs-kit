@@ -1,0 +1,28 @@
+/* docs.zlink.systems extra.css 중 어느 사이트에나 맞는 부분.
+   정본: zlink-systems/zlink doc/site/docs/assets/stylesheets/extra.css (SOURCE.md 참조).
+   ZLink 전용(언어 선택기, 설치 문서 색 띠, archify iframe)은 가져오지 않는다. */
+
+/* ASCII 그림이 monospace 칸에 맞게 그려지도록 합자를 끈다. */
+.md-typeset pre > code {
+  font-variant-ligatures: none;
+}
+
+/* 내용 탭(=== "탭") — 라벨을 키우고 고른 탭에 색을 채워 지금 무엇을 보고 있는지 보이게 한다. */
+.md-typeset .tabbed-labels > label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.5em 0.85em;
+  letter-spacing: 0.01em;
+}
+.md-typeset .tabbed-set > input:checked + label {
+  color: var(--md-primary-fg-color);
+  background-color: var(--md-code-bg-color);
+  border-radius: 0.2rem 0.2rem 0 0;
+}
+.md-typeset .tabbed-labels {
+  box-shadow: 0 -0.05rem var(--md-default-fg-color--lightest) inset;
+}
+.md-typeset .tabbed-content {
+  border-left: 0.15rem solid var(--md-default-fg-color--lightest);
+  padding-left: 0.9rem;
+}
